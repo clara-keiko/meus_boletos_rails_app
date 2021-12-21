@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @bill.nome %></h1>
+  <p class="lead">Login: <%= @bill.usuario %></p>
+  <p class="lead">Senha: <%= @bill.senha %></p>
+  <p class="lead">Dia do vencimento: <%= @bill.data_de_vencimento %></p>
+  <p class="lead">Link para 2ª via: <%= @bill.link_para_o_boleto %></p>
+  <p class="lead">Obs: <%= @bill.obs %></p>
+  <hr class="my-4">
+  <table>
+    <th>
+      <%= link_to "Editar", edit_bill_path(@bill), class:'btn btn-warning' %>
+    </th>
+    <th>
+      <%= link_to "Deletar", @bill, method: :delete, class:'btn btn-danger' %>
+    </th>
+  </table>
+</div>
+<br>
+<%= link_to "Voltar", bills_path, class:'btn btn-secondary' %>

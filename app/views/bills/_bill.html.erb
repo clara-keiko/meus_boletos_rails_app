@@ -1,0 +1,30 @@
+<tbody>
+  <th>
+    <%= bill.nome %>
+  </th>
+
+  <th>
+    <%= bill.usuario %>
+  </th>
+
+  <th>
+    <%= bill.senha %>
+  </th>
+
+  <th>
+    <%= bill.data_de_vencimento %>
+  </th>
+
+  <th>
+      <%= link_to "2ª via",bill.link_para_o_boleto, target: :_blank, class:'btn btn-primary' %>
+  </th>
+  <th>
+    <%= link_to "Ver", bill, class:'btn btn-primary' %>
+  </th>
+  <th>
+    <%= link_to "Editar", edit_bill_path(bill), class:'btn btn-warning' %>
+  </th>
+  <th>
+    <%= button_to "Deletar", bill, method: :delete, class:'btn btn-danger' %>
+  </th>
+</tbody>

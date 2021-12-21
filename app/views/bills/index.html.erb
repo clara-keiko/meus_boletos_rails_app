@@ -1,0 +1,46 @@
+<% if user_signed_in? %>
+<h1>Acesso de boletos</h1><br></br>
+<table class="table table-striped table-bordered align-middle table-hover">
+<thead class="align-middle table-dark">
+
+<th>
+  <strong>Nome</strong>
+</th>
+
+<th>
+  <strong>Usuario</strong>
+</th>
+
+<th>
+  <strong>Senha</strong>
+</th>
+
+<th>
+  <strong>Dia de vencimento</strong>
+</th>
+
+<th>
+  <strong>Link para o boleto</strong>
+</th>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+</thead>
+<% @bills.each do |bill| %>
+    <% if bill.user == current_user %>
+    <%= render bill %>
+    <% end %>
+<% end %>
+</table>
+<br>
+<p>
+  <%= link_to "Adicionar conta", new_bill_path, class:'btn btn-success' %>
+</p>
+<% else %>
+<div id='banner'>
+<%= image_tag("bck1.png", :alt=> "banner", :height => '600px' ) %>
+</div>
+<% end %>
